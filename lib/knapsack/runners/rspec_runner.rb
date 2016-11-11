@@ -13,7 +13,6 @@ module Knapsack
         Knapsack.logger.info
 
         cmd = %Q[parallel_rspec #{args} -- #{allocator.stringify_node_tests}]
-        puts cmd
 
         system(cmd)
         exit($?.exitstatus) unless $?.exitstatus.zero?
