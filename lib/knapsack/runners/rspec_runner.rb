@@ -12,9 +12,9 @@ module Knapsack
         Knapsack.logger.info allocator.leftover_node_tests
         Knapsack.logger.info
 
-        cmd = %Q[parallel_rspec #{args} --default-path #{allocator.test_dir} -- #{allocator.stringify_node_tests}]
+        cmd = %Q[parallel_rspec #{args} -- #{allocator.stringify_node_tests}]
         puts cmd
-        
+
         system(cmd)
         exit($?.exitstatus) unless $?.exitstatus.zero?
       end
